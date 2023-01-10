@@ -47,17 +47,7 @@ public class PlantList {
 
 
 
-    public void exportToFile(String getFilename,String getDelimiter){
-        try (PrintWriter writer = new PrintWriter(new FileWriter(getFilename))) {
-            for (Plant plant : plantList)
-            {
-                writer.println(plant.getName()+getDelimiter+plant.getNotes()+getDelimiter+plant.getPlanted()+getDelimiter+plant.getWatering()+plant.getWateringInfo());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-    }
 //upravit pre PlantList
     public static PlantList importFromFile(String getFilename, String getDelimiter) throws PlantException{
         String nextLine = "";
@@ -111,7 +101,17 @@ public class PlantList {
 
         return result;
     }
+    public void exportToFile(String getFilename,String getDelimiter){
+        try (PrintWriter writer = new PrintWriter(new FileWriter(getFilename))) {
+            for (Plant plant : plantList)
+            {
+                writer.println(plant.getName()+getDelimiter+plant.getNotes()+getDelimiter+plant.getPlanted()+getDelimiter+plant.getWatering()+plant.getWateringInfo());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 
 }
 

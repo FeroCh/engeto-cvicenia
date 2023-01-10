@@ -15,7 +15,7 @@ public class RegisterOfPurchases {
     public static RegisterOfPurchases importFromFile(String filename,String delimiter) throws PlantException {
         String nextLine = "";
         // kontrolny vypis: System.out.println(nextLine);
-        String[] items = new String[1];
+        String[] items = new String[0];
         LocalDate date;
         BigDecimal price;
         Category category;
